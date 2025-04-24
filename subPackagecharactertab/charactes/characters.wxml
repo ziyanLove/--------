@@ -1,0 +1,65 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<view class="main">
+  <view class="xiangqing">
+    <!-- 角色档案 -->
+    <view class="dangan" style=" background-color: #fff; border-radius: 10rpx; padding: 15rpx;padding-left: 3%;">
+      <view class="name">
+        <view>{{chapter.chaptername}}</view>
+        <image src="{{chapter.chaptersrc}}" />
+      </view>
+      <view style="display: flex;">
+        <view class="bookname">{{ chapter.bookname }}</view>
+        <view class="shenfen">{{ chapter.identity }}</view>
+      </view>
+    </view>
+    <!-- 角色身份信息和角色关系 -->
+    <view class="xin">
+      <!-- 信息 -->
+      <view class="xinxi">
+        <view class="ad">
+          <view style="font-size: 40rpx; font-weight: 600;">角色档案:</view>
+        </view>
+        <view class="ad">
+          <view>性别: {{chapter.gender}}</view>
+          <view>生日: {{chapter.birthday}}</view>
+          <view>身高: {{chapter.height}} cm </view>
+          <view>体重: {{chapter.weight}} kg </view>
+        </view>
+      </view>
+      <!-- 关系 -->
+      <view class="guanxi">
+        <navigator url="/subPackagecharactertab/characterrelationship/characterrelationship?chapterid={{chapterid}}&bookid={{bookid}}&chaptername={{chapter.chaptername}}">
+          <view class="ad">
+            <view style="font-size: 40rpx; font-weight: 600;">人物关系: <text class="add">添加关系 ></text></view>
+          </view>
+        </navigator>
+        <view class="ad" style=" padding-top: 2%;">
+          <view class="guan" wx:for="{{chapter.relationships}}" wx:key="index" style="padding-top: 2%; height: 80rpx;"> <text>0{{index+1}}: </text> <text style="margin-left: 3%; color: #fee490; font-weight: 600;"  data-chapterid="{{item.chapterid}}">{{item.name}} </text> <text style="margin-left: 290rpx; font-weight: 700; color: rgb(128, 122, 122);">{{item.relationships}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 人物标签 -->
+    <view class="biaoqian" style="margin-top: 40rpx;">
+      <navigator url="/subPackagecharactertab/addnotice/addnotice?chapterid={{chapterid}}&bookid={{bookid}}">
+        <view class="ad">
+          <view style="font-size: 40rpx; font-weight: 600;">标签: <text class="add">添加标签 ></text></view>
+        </view>
+      </navigator>
+      <view class="biao">
+        <view class="buding">
+          <scroll-view scroll-x="true" style="display: flex; white-space: nowrap; height: 100rpx; margin-left: 4%;">
+            <text wx:for="{{chapter.chapterspecial}}" wx:key="index" wx:for-item="cell" style="display: inline-block;">{{cell.chapterspecial}}</text>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+    <view style="height: 100rpx;"></view>
+  </view>
+  <button style="background-color: #fff; border-radius: 25rpx;" bindtap="deleate" wx:if="{{danganflag}}">删除角色档案</button>
+  <view style="height: 100rpx;"></view>
+</view>

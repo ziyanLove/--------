@@ -1,0 +1,57 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<view class="main">
+  <!-- 搜索栏 -->
+  <view class="seachBox">
+    <image src="/icon/搜索.png" />
+    <input type="text" placeholder="{{search_item}}" confirm-type="search" class="searchbook" bindconfirm="onSearch" focus />
+  </view>
+  <!-- 未搜索显示 -->
+  <view class="search_bar">
+    <!-- 搜索历史 -->
+    <view class="search-history" wx:if="{{search_history_flag}}"  wx:key="idnex" wx:for-item="item" >
+      <view class="search-history-header"><text>搜索历史</text>
+        <image src="/icon/删除.png" style="width: 44rpx; height: 44rpx; float: right; margin-right: 70rpx; margin-top: 10rpx;" bindtap="delete" />
+      </view>
+      <view class="search-history-list">
+        <view wx:for="{{search_history}}" wx:key="index" class="search-history-item" bindtap="searchbook" data-item="{{item}}">{{item}}</view>
+      </view>
+    </view>
+    <!-- 搜索发现 -->
+    <view class="search-discovery" wx:if="{{search_discovery_flag}}">
+      <view class="search-discovery-header">搜索发现</view>
+      <view class="search-discovery-list">
+        <view wx:for="{{search_discovery}}" wx:key="index" wx:for-item="item" class="search-discovery-item">
+          <navigator url="/subPackagedetails/bookdetails/bookdetails?book_id={{item.bookid}}">{{item.bookname}}</navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 搜索显示 -->
+  <view class="search_display" wx:if="{{search_display_flag}}">
+    <scroll-view scroll-y="true" style="height:100%;" enable-back-to-top>
+    <view class="search_result">搜索结果</view>
+      <block wx:for="{{search_play}}" wx:key="index" wx:for-item="item"  wx:for-index="idx" wx:for-start="0" wx:for-end="{{endIndex}}">
+        <navigator class="Personalized_book" url="/subPackagedetails/bookdetails/bookdetails?book_id={{item.id}}">
+        <!-- 图片 -->
+          <image class="bookcover" src="{{ item.bookcoverurl }}" />
+          <!-- 书本信息 -->
+          <view class="bookmessage">
+          <!-- 书本名 -->
+            <view class="bookname">{{ item.bookname }}</view>
+            <!-- 作者名和章节书 -->
+            <view class="bookuser"><text class="bookauthor">{{ item.bookauthor }}</text><text class="bookauthor"> •</text>
+            <text class="bookspecial">{{ item.bookspecial1 }}</text><text class="bookauthor"> •</text>
+            <text class="bookchapter">{{ item.directorynumb }}</text></view>
+            <!-- 书本简介 -->
+            <view class="bookblub">{{ item.bookblurb }}</view>
+          </view>
+        </navigator>
+      </block>
+      <navigator url="/subPackagesharednovel/feedback/feedback"><view class="result_head">没找到自己想要的书？点此反馈</view></navigator>
+    </scroll-view>
+  </view>
+</view>

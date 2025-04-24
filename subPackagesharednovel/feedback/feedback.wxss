@@ -1,0 +1,35 @@
+/* subPackagesharednovel/feedback/feedback.wxss */
+.main {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, .0);
+  width: 100%;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  position: static;
+}
+
+button:after {
+  content: none;
+}
+
+/* 去掉边框 */
+button::after {
+  border: none;
+}
+
+button {
+  margin: 0;
+  width: 100% !important;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: left;
+  background-color: #fff;
+  border-radius: 0;
+  padding-left: 5%;
+  font-weight: 400;
+}

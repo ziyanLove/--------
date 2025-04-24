@@ -1,0 +1,42 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<!-- 蒙层 -->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}">
+</view>
+<view class="main">
+  <!-- 人物展示 -->
+  <view class="renwu">
+    <view class="zhuyaorenwu">{{chaptername}}</view>
+  </view>
+  <!-- 详细对应 -->
+  <view class="guanxi">
+    <view class="ad" style=" padding-top: 2%;">
+      <view class="guan" wx:for="{{relationships}}" wx:key="index" style="height: 100rpx; display: flex; align-items: center; padding-bottom: 20rpx;">
+        <text class="bianhao">0{{index+1}}: </text>
+        <text style="margin-left: 3%; color: #fee490; font-weight: 600;" bindtap="chaptername" data-chapterid="{{item.chapterid}}">{{item.name}} </text>
+        <text style="margin-left: 290rpx; font-weight: 700; color: rgb(128, 122, 122);">{{item.relationships}}</text>
+        <image src="/images/manageandhistory/trash2.png" style="height: 40rpx; width: 40rpx; position: absolute; right: 20rpx;" bindtap="shanchu" data-relationshipid="{{item.relationshipid}}"/>
+      </view>
+    </view>
+  </view>
+  <!-- 添加关系展示 -->
+  <view bindtap="powerDrawer" data-statu="open" class="btn">
+    <image src="/icon/加.png" style="width: 120rpx; height: 120rpx; margin: 0 auto; display: block; margin-top: 10%;" />
+  </view>
+  <!-- 底部 -->
+  <view style="height: 100rpx;"></view>
+</view>
+<view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+    <!--drawer content-->
+    <view class="drawer_content">
+      <view style="font-size: 50rpx; font-weight: 700; text-align: center; margin-top: 20rpx; margin-bottom: 20rpx;">添加关系</view>
+      <text class="wenzi">关联人</text>
+      <input type="text" placeholder="如:唐三" value="{{valuename}}" confirm-type="done" class="iptd" bindinput="inputCom1"/>
+      <text class="wenzi">关系</text>
+      <input type="text" placeholder="如:情侣" value="{{valuerelations}}" confirm-type="done" class="iptd" bindinput="inputCom2"/>
+      <button bindtap="addrelations" class="btnd">添加</button>
+    </view>
+  </view>

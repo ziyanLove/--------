@@ -1,0 +1,14 @@
+/* commpnents/usersnotice/usersnotice.wxss */
+.main {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 85%;
+
+}
+
+text {
+  display: block;
+  font-weight: 600;
+  font-size: 40rpx;
+}

@@ -1,0 +1,19 @@
+<!-- 搜索栏 -->
+<view>
+  <navigator url="/subPackageSearch/search/search?search_item={{swiperlist[1].bookname}}" class="seachBox" open-type="navigate">
+    <image src="/icon/搜索.png" class="search_image" />
+    <input type="text" placeholder="{{ swiperlist[1].bookname }}" confirm-type="search" class="searchbook" disabled />
+  </navigator>
+</view>
+<!-- 轮播图 -->
+<view class="carouselbox">
+  <swiper autoplay circular interval="5000" duration="1500" class="swipershu" previous-margin="50rpx" next-margin="50rpx" bindchange="change">
+    <!-- 轮播内容 -->
+    <swiper-item wx:for="{{swiperlist}}" wx:key="{{index}}">
+      <!-- 书籍主页跳转 -->
+      <navigator url="/subPackagedetails/bookdetails/bookdetails?book_id={{item.bookid}}" class="swiperbook">
+        <image src="{{item.url}}" class="slide-image {{swiperIndex == index ? 'active' : 'quiet'}}" mode="aspectFill" />
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>

@@ -1,0 +1,54 @@
+/* feedback.wxss */
+.main {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, .0);
+  width: 90%;
+}
+.con {
+  height: 800rpx;
+  width: 100%;
+}
+.container {
+  height: 900rpx;
+  border-radius: 25rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.form {
+  width: 100%;
+}
+.form input {
+  width: 90%;
+  height: 100rpx;
+  height: 40px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 20rpx;
+  margin: 10rpx auto 40rpx auto;
+  background-color: #fff;
+}
+
+.form button {
+  padding: 10px 20px;
+  background: linear-gradient(to right,#fc4851, #ff824b);
+  color: #fff;
+  border-radius: 30px;
+}
+.vvr {
+  font-weight: 600;
+  font-size: 40rpx;
+}
+textarea {
+  width: 90%;
+  padding: 5%;
+  background-color: #fff;
+  border-radius: 20rpx;
+}

@@ -1,0 +1,107 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bookshelf/bookshelf",
+    "pages/mine/mine",
+    "commpnents/navbar/navbar",
+    "commpnents/index/index_swiper/index_swiper",
+    "commpnents/index/index_tab/index_tab",
+    "commpnents/usersnotice/usersnotice",
+    "commpnents/upimgs/upimgs",
+    "commpnents/myshelf/myshelf",
+    "commpnents/loading/loading"
+
+  ],
+  "window": {
+    "navigationStyle": "custom"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#555",
+    "selectedColor": "#ff0000",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/bookshelf/bookshelf",
+        "text": "书架",
+        "iconPath": "icon/我的书架.png",
+        "selectedIconPath": "icon/我的书架 (1).png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "书城",
+        "iconPath": "icon/书城.png",
+        "selectedIconPath": "icon/书城 (1).png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "icon/我的，我.png",
+        "selectedIconPath": "icon/我的，我 (1).png"
+      }
+    ]
+  },
+  "subPackages": [
+    {
+      "root": "subPackageSearch",
+      "name": "PackageSearch",
+      "pages": [
+        "search/search"
+      ]
+    },
+    {
+      "root": "subPackagedetails",
+      "name": "Packagdetails",
+      "pages": [
+        "bookdetails/bookdetails"
+      ]
+    },
+    {
+      "root": "subPackagesharednovel",
+      "name": "Packagdesharednovel",
+      "pages": [
+        "sharednovel/sharednovel",
+        "feedback/feedback"
+      ]
+    },
+    {
+      "root": "subPackageaddbook",
+      "name": "Packagdeaddbook",
+      "pages": [
+        "addbook/addbook"
+      ]
+    },
+    {
+      "root": "subPackagelisteningdetails",
+      "name": "Packagdelisteningdetails",
+      "pages": [
+        "listeningdetails/listeningdetails"
+      ]
+    },
+    {
+      "root": "subPackagemymessage",
+      "name": "Packagmymessage",
+      "pages": [
+        "browsinghistory/browsinghistory",
+        "bookshelfmanagement/bookshelfmanagement"
+      ]
+    },
+    {
+      "root": "subPackagecharactertab",
+      "name": "Packagcharactertab",
+      "pages": [
+        "charactertab/charactertab",
+        "charactes/characters",
+        "useraddcharacter/useraddcharacter",
+        "addnotice/addnotice",
+        "characterrelationship/characterrelationship"
+      ]
+    }
+  ],
+  "lazyCodeLoading": "requiredComponents",
+  "useExtendedLib": {
+    "weui": true
+  }
+}

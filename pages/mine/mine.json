@@ -1,0 +1,11 @@
+{
+  
+  "usingComponents": {
+    "navigation":"/commpnents/navbar/navbar",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "loading": "/commpnents/loading/loading"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black"
+}

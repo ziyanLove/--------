@@ -1,0 +1,15 @@
+<!--components/bookslist/bookslist.wxml-->
+<!-- 组件， -->
+<view class="item">
+  <image src="{{book.bookcoverurl}}" class="itemimage"/>
+  <view class="middle">
+    <text class="name">{{book.bookname}}<text class="circle"></text></text>
+    <text class="smalltext">{{book.bookblurb}}</text>
+    <!-- 作者和读到哪里了 -->
+    <text class="smalltext">{{book.bookauthor}} • {{book.directoryrecord}}</text>
+    <view class="desc">
+      <!-- 最后阅读时间 -->
+      <text class="time"><text>最近阅读</text>:{{book.lastreadtime}}</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,141 @@
+/* subPackagesharednovel/sharednovel/sharednovel.wxss */
+.main {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+}
+
+.no_login {
+  display: block;
+  width: 470rpx;
+  margin: 0 auto;
+  font-weight: 600;
+}
+/* 个性化推荐面板栏 */
+.personalized_recommendation {
+  margin-top: 60rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.personalized_name {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 50rpx;
+  margin: 20rpx auto;
+  width: 70%;
+  border-bottom: 2rpx #eee solid;
+}
+
+.personalized_name .text_1 {
+  width: 260rpx;
+  padding-bottom: 20rpx;
+}
+
+.personalized_name .image_1 {
+  padding-top: 14rpx;
+  width: 50rpx;
+  height: 50rpx;
+  padding-bottom: 20rpx;
+}
+
+.scroll-view-item {
+  height: 100%;
+  height: 220rpx;
+  background-color: #fff;
+  margin-top: 40rpx;
+}
+
+.Personalized_book {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 220rpx;
+  padding: 4rpx;
+  background-color: #fff;
+  border: 2rpx solid #fff;
+  border-radius: 18rpx;
+  margin-bottom: 15rpx;
+}
+
+.Personalized_book .image_2 {
+  margin-top: 35rpx;
+  width: 125rpx;
+  height: 160rpx;
+  border-radius: 8rpx;
+}
+
+.book_name {
+  width: 300rpx;
+  font-weight: 600;
+  margin-top: 30rpx;
+  padding-left: 12rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.Personalized_book .bookblub {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  margin-top: -16rpx;
+  padding-top: -16rpx;
+  padding-left: 12rpx;
+  width: 448rpx;
+  height: 80rpx;
+  white-space: normal;
+  font-size: 25rpx;
+  color: rgb(156, 156, 156);
+}
+.bookauthor {
+  display: inline-block;
+  font-weight: 500;
+  margin-top: -12rpx;
+  padding-top: -16rpx;
+  padding-left: 12rpx;
+  white-space: normal;
+  font-size: 25rpx;
+  max-width: 190rpx;
+  color: rgb(156, 156, 156);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookspecial {
+  display: inline-block;
+  font-weight: 500;
+  margin-top: -5rpx;
+  padding-top: 16rpx;
+  padding-left: 12rpx;
+  white-space: normal;
+  font-size: 25rpx;
+  color: rgb(156, 156, 156);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookchapter {
+  display: inline-block;
+  font-weight: 500;
+  margin-top: -5rpx;
+  padding-top: 16rpx;
+  padding-left: 12rpx;
+  white-space: normal;
+  font-size: 25rpx;
+  color: rgb(156, 156, 156);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

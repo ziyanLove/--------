@@ -1,0 +1,559 @@
+/* subPackagelisteningdetails/listeningdetails/listeningdetails.wxss */
+
+.containe {
+  background-color: #3e4a56;
+  width: 100%;
+  height: 100%;
+  padding-top: 50rpx;
+  box-sizing: border-box;
+  position: absolute;
+  top: 8%;
+}
+
+.containe .top {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containe .top .topleft {
+  display: flex;
+}
+
+.containe .top .topleft image {
+  position: absolute;
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: 20rpx;
+  margin-top: -50rpx;
+}
+
+
+.containe .top .topmiddle {
+  font-size: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top .topmiddle .bord {
+  width: 20rpx;
+  height: 6rpx;
+  border: 1rpx solid #f4f4f4;
+  background-color: #fff;
+  border-radius: 6rpx;
+  margin-top: 10rpx;
+}
+
+.containe .middleimage {
+  padding-top: 80rpx;
+  width: 100%;
+  height: 450rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.containe .middleimage .image {
+  width: 438rpx;
+  height: 438rpx;
+  border-radius: 50%;
+}
+
+.containe .bottom {
+  width: 100%;
+  height: 500rpx;
+  /* background-color: red; */
+  padding-left: 30rpx;
+  padding-top: 50rpx;
+  position: fixed;
+  bottom: 50rpx;
+}
+
+.containe .bottom .directory {
+  color: #fff;
+  font-size: 40rpx;
+  margin-bottom: 10rpx;
+}
+
+.containe .bottom .name {
+  display: flex;
+  color: #aab0b3;
+  margin-bottom: 20rpx;
+}
+
+.containe .bottom .name image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.containe .bottom .name .addbook {
+  font-weight: 900;
+  font-size: 30rpx;
+  width: 200rpx;
+  border: 1rpx solid gray;
+  padding: 5rpx;
+  border-radius: 50rpx;
+  text-align: center;
+  background-color: #fff;
+  color: #3e4a56;
+  height: 43rpx;
+}
+
+.containe .bottom .author {
+  color: #aab0b3;
+}
+
+.containe .bottom .options {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 10rpx;
+  margin-left: -3%;
+}
+
+.containe .bottom .options image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.containe .bottom .options .original {
+  font-size: 20rpx;
+  border: 4rpx solid #afb4b6;
+  width: 60rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 15rpx;
+  position: relative;
+  color: #afb4b6;
+}
+
+.containe .bottom .options .original::before {
+  content: '';
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #3e4a56;
+  position: absolute;
+  left: -7rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.containe .bottom .options .original::after {
+  content: '';
+  width: 10rpx;
+  height: 10rpx;
+  background-color: #3e4a56;
+  position: absolute;
+  right: -7rpx;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  left: -10rpx;
+}
+
+.slider-wrapper .alredylisten {
+  position: absolute;
+  top: 60rpx;
+  color: #c1c4c5;
+  font-size: 20rpx;
+  left: 84rpx;
+}
+
+.slider-wrapper .total {
+  font-size: 20rpx;
+  position: absolute;
+  right: 0;
+  margin-right: 166rpx;
+  top: 60rpx;
+  color: #c1c4c5;
+}
+
+.slider-wrapper image {
+  width: 55rpx;
+  height: 55rpx;
+  position: relative;
+}
+
+.slider-wrapper image::after {
+  content: '15';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 22rpx;
+  color: #80888e;
+}
+
+.slider {
+  width: 500rpx;
+}
+
+.music-player .controls {
+  position: absolute;
+  left: -20rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50rpx;
+}
+
+.music-player .controls .playleft image {
+  transform: rotate(180deg);
+}
+
+.music-player .controls .speed {
+  position: relative;
+}
+
+.music-player .controls .speed .times {
+  font-size: 20rpx;
+  right: -35rpx;
+  position: absolute;
+  width: 60rpx;
+  height: 30rpx;
+  background-color: #fff;
+  border-radius: 40rpx;
+  top: -10rpx;
+  text-align: center;
+  line-height: 30rpx;
+
+}
+
+.music-player .controls .speed image {
+  width: 80rpx;
+  height: 80rpx;
+  margin-left: -15rpx;
+}
+
+.music-player .controls .suspend {
+  width: 120rpx;
+  height: 120rpx;
+  background-color: #fff;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  position: relative;
+  border-radius: 50%;
+}
+
+.music-player .controls .suspend image {
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* margin-left: 10rpx; */
+}
+
+.music-player .controls image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.content-play-cover image {
+  animation: rotateImage 10s linear infinite;
+  width: 400rpx;
+  height: 400rpx;
+  border-radius: 50%;
+  border: 1rpx solid #333;
+}
+
+@keyframes rotateImage {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bookList {
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+  bottom: 0;
+  height: 800rpx;
+}
+
+.bookList .listtop {
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 30rpx;
+}
+
+.bookList .listtop image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.bookList .listtop text {
+  font-size: 48rpx;
+  font-weight: 500;
+}
+
+.order {
+  margin-left: 30rpx;
+}
+
+.order image {
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+
+.order text {
+  font-size: 28rpx;
+  color: #9b9a9a;
+}
+
+.bookList scroll-view {
+  margin-top: 40rpx;
+  padding-left: 30rpx;
+  height: 100%;
+}
+
+.bookList scroll-view .item {
+  display: flex;
+  border-top: 1rpx solid #e7e6e6;
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+.bookList scroll-view .item image {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.active {
+  color: #ff5452;
+}
+
+.bookList scroll-view .item .bookname {
+  width: 550rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 60rpx;
+}
+
+.myyList {
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.mytimes {
+  width: 100%;
+  height: 700rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  border-top-right-radius: 25rpx;
+  border-top-left-radius: 15rpx;
+
+}
+
+.mytimes .mytimess {
+  /* padding: 30rpx; */
+  position: relative;
+}
+
+.mytimes .mytimess .myspeed {
+  padding-left: 20rpx;
+  /* width: 100%; */
+  font-size: 32rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  border-bottom: 1rpx solid gray;
+
+}
+
+.mytimes .mytimess .lastmyspeed {
+  padding-left: 20rpx;
+  width: 130%;
+  font-size: 32rpx;
+  height: 95rpx;
+  line-height: 95rpx;
+  border-bottom: 16rpx solid #3e4a56;
+}
+
+.mytimes .mytimess .lll {
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #f96342;
+  border-radius: 50%;
+  position: absolute;
+  right: 50rpx;
+  transform: translate(0%, -200%);
+}
+
+.mytimes .mytimess .lll::before {
+  content: '';
+  width: 40rpx;
+  height: 40rpx;
+  top: -22%;
+  left: -22%;
+  background-color: transparent;
+  position: absolute;
+  border-radius: 50%;
+  border: 1rpx solid #f86342;
+}
+
+.mytimes .closespeed {
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* AI文稿 */
+.Text {
+  width: 100%;
+  height: 800rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  border-top-right-radius: 25rpx;
+  border-top-left-radius: 15rpx;
+  padding-top: 50rpx;
+  box-sizing: border-box;
+}
+
+.Text .Texttop {
+  font-size: 45rpx;
+  font-weight: 600;
+  width: 100%;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Text .content {
+  width: 90%;
+  height: 100%;
+  margin: 80rpx auto;
+  font-size: 40rpx;
+  line-height: 100rpx;
+}
+
+button[size=mini] {
+  width: 80rpx;
+  background-color: transparent;
+  line-height: 15rpx;
+}
+
+.Voicesettings {
+  width: 100%;
+  height: 650rpx;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  border-top-right-radius: 25rpx;
+  border-top-left-radius: 15rpx;
+  padding-top: 50rpx;
+  box-sizing: border-box;
+  padding: 40rpx;
+}
+
+.Voicesettings .voicetop {
+  font-size: 45rpx;
+  font-weight: 500;
+  width: 100%;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Voicesettings .voicetitle {
+  font-size: 36rpx;
+}
+
+.Voicesettings .role {
+  width: 100%;
+  /* height: 400rpx; */
+  /* background-color: red; */
+  margin-top: 50rpx;
+}
+
+.Voicesettings .list {
+
+  width: 100%;
+  height: 100%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  /* background-color: pink; */
+  /* display: flex; */
+  /* justify-content: space-around;
+  flex-wrap: wrap; */
+}
+
+.Voicesettings .list .item {
+  width: 140rpx;
+  height: 180rpx;
+  /* background-color: yellowgreen; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  float: left;
+  margin-left: 17rpx;
+  margin-bottom: 40rpx;
+}
+
+.Voicesettings .list .item .roleIMG {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.Voicesettings .list .item .voicename {
+  font-size: 28rpx;
+}
+
+.textactive {
+  color: orangered;
+
+}
+
+.activeimg {
+  position: relative;
+}
+
+.activeimg::before {
+  content: "✔";
+  color: #fff;
+  font-size: 80rpx;
+  text-align: center;
+  line-height: 120rpx;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+
+}

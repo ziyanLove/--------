@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "navigation":"/commpnents/navbar/navbar",
+    "loading": "/commpnents/loading/loading"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black",
+  "disableScroll":true
+}

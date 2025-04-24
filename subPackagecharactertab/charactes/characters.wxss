@@ -1,0 +1,110 @@
+
+.main {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 85%;
+}
+.xiangqingv {
+  display: flex;
+  flex-direction: column;
+}
+.name {
+  display: flex;
+  font-size: 65rpx;
+  font-weight: 900;
+}
+.name image {
+  position: relative;
+  left: 45%;
+  display: block;
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 100rpx;
+}
+.dangan {
+  display: flex;
+  flex-direction: column;
+}
+.shenfen {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+  line-height: 60rpx;
+  background-color: #eee;
+  border-radius: 40rpx;
+  text-align: center;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+}
+.bookname {
+  font-size: 38rpx;
+}
+.xin {
+  margin-top: 10%;
+}
+.xinxi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  margin-bottom: 5%;
+  border-radius: 20rpx;
+  height: 300rpx;
+}
+.xinxi view {
+  margin-top: 5rpx;
+  font-size: 30rpx;
+}
+.xinxi .zi {
+  color: #000; 
+  font-size: 40rpx;
+  padding-top: 3%;
+  height: 60rpx;
+}
+.ad {
+  margin-left: 5%;
+}
+
+.guanxi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
+  margin-bottom: 5%;
+  border-radius: 20rpx;
+  padding-top: 2%;
+}
+.biaoqian {
+  padding-top: 2%;
+  background: #fff;
+  border-radius: 20rpx;
+}
+.biao {
+  padding-top: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1%;
+}
+.biao text {
+  padding-top: 2%;
+  background-color: #eee;
+  padding: 15rpx;
+  font-size: 32rpx;
+  border-radius: 30rpx;
+  color: #000;
+}
+.add {
+  font-size: 32rpx;
+  font-weight: 400;
+  position: absolute;
+  right: 5%;
+  color: rgb(156, 155, 155);
+}
+.buding text {
+  margin-right: 5rpx;
+  margin-left: 5rpx;
+  font-size: 30rpx;
+}
+.ad {
+  margin-top: 1%;
+}

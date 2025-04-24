@@ -1,0 +1,122 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<view class="main">
+  <!-- 信息页 -->
+  <view class="message" style="{{ backgroudl }}">
+    <scroll-view scroll-y="true" style="height: 900rpx;">
+      <!-- 图片，基本信息 -->
+      <view class="headmessage">
+        <image src="{{ bookinfo.bookcoverurl }}"/>
+        <view class="headmessage1">
+          <text class="bookname">{{bookinfo.bookname}}</text>
+          <view class="author"><view>{{bookinfo.bookstatu }} • </view><view> {{ bookinfo.directorynumb }} • </view><view> {{ bookinfo.bookauthor }} </view><view style="margin-left: 10rpx;">著</view></view>
+        </view>
+      </view>
+      <!-- 评分，播放量，以及收藏 -->
+      <view class="kpi">
+        <view class="kpifox">
+          <text class="fenshu">{{ bookinfo.score}}<text class="shuzhi"> 分</text></text>
+          <text class="jieshi">评分</text>
+        </view>|
+        <view class="kpifox">
+          <text class="fenshu">{{bookinfo.viewnumb/10000}}<text class="shuzhi"> 万</text></text>
+          <text class="jieshi">浏览量</text>
+        </view>|
+        <view class="kpifox">
+          <text class="fenshu">{{bookinfo.collect}}<text class="shuzhi"> 万</text></text>
+          <text class="jieshi">收藏</text>
+        </view>
+      </view>
+      <!-- 标签 -->
+      <view>
+        <view class="booklabel" style="font-family:fantasy;">
+          <scroll-view scroll-x="true" class="booklabel-list">
+            <text wx:for="{{bookinfo.bookspecial}}" wx:key="index" wx:for-item="item" class="labei_list-item">{{item.bookspecial}}
+            </text>
+          </scroll-view>
+        </view>
+      </view>
+      <!-- 简介 -->
+      <view class="jianjie" style="margin-top: 30rpx; font-weight: 600;">
+        <text>内容概述</text>
+        <view class="bookblub">
+          <scroll-view style="height: 250rpx;" scroll-y="true">
+            {{bookinfo.bookblurb}}
+          </scroll-view>
+        </view>
+      </view>
+      <!-- 听过此书的还听过 -->
+      <view class="morelisten">
+        <view style="margin-top: 30rpx; font-weight: 600;">听过此书的还听过</view>
+        <view class="tab2">
+          <!-- 跳转至书籍详情页 -->
+          <navigator class="book_suggest" wx:for="{{booksuggest}}" wx:key="booksuggest" url="/subPackagedetails/bookdetails/bookdetails?book_id={{item.id}}" open-type="redirect">
+            <image src="{{ item.bookcoverurl }}" mode="" class="image_0" />
+            <view class="bookname">{{item.bookname}}</view>
+          </navigator>
+        </view>
+        <view style="height: 80rpx;"></view>
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 目录页 -->
+  <view class="directory" style="height:{{height}}vh;" bind:touchstart="touchStart" bind:touchend="touchEnd" bind:touchcancel="touchCancel">
+    <view class="item-box">
+      <!-- 表明这是个抽屉 -->
+      <view style="border-bottom: 4px solid #cdcece; width: 100rpx; height: 20rpx; position: fixed;border-radius: 8rpx; left: 50%; transform: translate(-50%,0); z-index: 999;"></view>
+      <!-- 人物选项卡和功能 -->
+      <view style="position: fixed;left: 50%; transform: translate(-50%,0);">
+        <view class="people_tab" bindtap="shezhi">设置人物选项卡</view>
+        <!-- 功能 -->
+        <view class="gongneng">
+          <view>
+            <!-- 保证每次传的都是第一个 -->
+            <navigator url="/subPackagelisteningdetails/listeningdetails/listeningdetails?directoryid={{ bookinfo.directoryVos[0].directoryid }}&bookid={{bookid}}" open-type="navigate" hover-class="none" style="display: flex;">
+              <image src="/icon/播放.png" class="imagea" />
+              <text style="color: #f5a829;" class="texta">开始播放</text>
+            </navigator>
+          </view>
+          <!-- 未收藏 --> 
+          <view bindtap="collectionbook" style="margin-left: 20rpx;" wx:if="{{!bookflag}}">
+            <image src="/icon/添加入列.png" class="imageb" />
+            <text class="textb">收藏</text>
+          </view>
+          <!-- 已收藏 -->
+          <view bindtap="deletecollectbook" style="margin-left: 20rpx;" wx:if="{{bookflag}}">
+            <image src="/icon/已存在书架.png" class="imageb" style="width: 65rpx; height: 65rpx; margin-top: 3rpx;" />
+            <text class="textb">取消收藏</text>
+          </view>
+        </view>
+      </view>
+      <!-- 主要内容 -->
+      <view style="position: fixed;">
+      <!-- 目录 -->
+        <view>
+          <!-- 目录 -->
+          <view style="display: flex;">
+            <view style="margin-top: 300rpx; margin-bottom: 30rpx;" class="muluhead">目录
+              <text style="display: block; width: 40rpx; border-bottom: 12rpx solid #f5a829; border-radius: 20rpx; margin: 0 auto;"></text>
+            </view>
+          </view>
+          <!-- 目录 -->
+          <view wx:if="{{tabflag}}">
+            <view style="height: 600rpx;">
+              <scroll-view scroll-y="true" class="ddmessqge" style="height: 550rpx; position: fixed;">
+                <!-- 循环遍历 -->
+                <view wx:for="{{ bookinfo.directoryVos }}" wx:key="key">
+                  <navigator url="/subPackagelisteningdetails/listeningdetails/listeningdetails?directoryid={{ item.directoryid }}&bookid={{bookid}}" open-type="navigate" hover-class="none" style="display: flex;">
+                    <view class="mululist"><text>{{ item.directoryname }}</text></view>
+                    <image src="/icon/立即播放.png" style="width: 60rpx; height: 60rpx; margin-right: 30rpx;" />
+                  </navigator>
+                </view>
+              </scroll-view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

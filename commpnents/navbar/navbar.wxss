@@ -1,0 +1,37 @@
+.navigationPage{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background-color:#eee;
+  text-align:center;
+  box-sizing: content-box;
+  padding: 0px;
+  z-index: 1000;
+}
+.head{
+  display: flex;
+  align-items: center;
+  color: #000;
+  background-color: #eee;
+  border-bottom: 4rpx solid #eee;
+  padding: 0px;
+}
+.navigationIcon{
+  position: absolute;
+  left:30rpx;
+  padding: 0px;
+}
+.navigationTitle{
+  font-weight:600;
+  flex:1;
+}
+.small{
+  font-size:14px;
+}
+.default{
+  font-size:16px;
+}
+.large{
+  font-size:18px;
+}

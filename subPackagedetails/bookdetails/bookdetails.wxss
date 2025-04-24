@@ -1,0 +1,307 @@
+/* subPackagedetails/bookdetails/bookdetails.wxss */
+.main {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, .0);
+  width: 100%;
+}
+
+.ddmessqge {
+  height: 9000rpx;
+}
+
+.message {
+  width: 100%;
+  height: 1150rpx;
+  position: relative;
+  top: -100rpx;
+  z-index: -100;
+}
+
+.headmessage {
+  display: flex;
+  padding-top: 80rpx;
+  justify-content: center;
+  margin: 20rpx;
+}
+
+.headmessage image {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #ebd7b5;
+}
+
+.headmessage1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.headmessage1 .bookname {
+  width: 470rpx;
+  color: #f7f8f7;
+  padding-left: 50rpx;
+  font-size: 50rpx;
+  font-weight: 500;
+}
+
+.headmessage1 text {
+  color: #f7f8f7;
+}
+
+.headmessage1 .author {
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  padding-left: 50rpx;
+  width: 100%;
+  display: flex;
+  color: #f7f8f7;
+}
+.author text {
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.kpi {
+  display: flex;
+  color: rgb(129, 128, 128);
+  justify-content: center;
+  margin-top: 33rpx;
+}
+
+.kpifox {
+  width: 33.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f7f8f7;
+}
+
+.jieshi {
+  color: #bbc0c4;
+  font-size: 28rpx;
+}
+
+.fenshu {
+  font-family: ‘Times New Roman’, Times, serif;
+  font-weight: 600;
+}
+
+.shuzhi {
+  font-size: 25rpx;
+  color: #bbc0c4;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: 400;
+}
+
+.booklabel-list {
+  display: flex;
+  margin-top: 20rpx;
+  white-space: nowrap;
+}
+
+.labei_list-item {
+  display: inline-block;
+  background-color: #56606a;
+  color: #f7f8f7;
+  border-radius: 50rpx;
+  margin-left: 3%;
+  padding: 12rpx;
+  font-size: 28rpx;
+}
+
+.jianjie {
+  width: 90%;
+  color: #fff;
+  margin: 20rpx auto 0 auto;
+}
+
+.bookblub {
+  padding: 20rpx;
+  margin-top: 10rpx;
+  height: 250rpx;
+  background-color: rgb(231, 231, 231, 0.1);
+  font-size: 30rpx;
+  text-overflow: ellipsis;
+  border-radius: 10rpx;
+  letter-spacing: 3rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+page {
+  height: 100%;
+  overflow: hidden;
+}
+
+.directory {
+  box-sizing: border-box;
+  /* padding-top: 40rpx; */
+  z-index: 99;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  transition: .3s all;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.item-box {
+  height: 100%;
+  overflow-y: auto;
+}
+
+.morelisten {
+  width: 90%;
+  color: #fff;
+  margin: 20rpx auto 0 auto;
+}
+
+/* tab */
+.tabbox {
+  margin-top: 40rpx;
+  width: 100%;
+  height: 800rpx;
+  background: #fff;
+  border: 2rpx solid #fff;
+  border-radius: 20rpx;
+}
+
+.hd {
+  padding-top: 20rpx;
+  display: flex;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+}
+
+.hd_flex {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: #333333;
+}
+
+.hd_flex_on {
+  font-size: 35rpx;
+  font-weight: 600;
+  color: #000000;
+  position: relative;
+  border-bottom: 6rpx solid #ff8902;
+  transition: all 0.2s;
+}
+
+/* tab栏 */
+.tab2 {
+  margin-top: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tab2 .book_suggest {
+  margin-top: 18rpx;
+  width: 160rpx;
+  height: 280rpx;
+  text-align: center;
+  font-size: 32rpx;
+}
+
+.tab2 .book_suggest .image_0 {
+  width: 150rpx;
+  height: 160rpx;
+  border-radius: 15rpx;
+}
+
+.tab2 .book_suggest .bookname {
+  width: 135rpx;
+  margin: 0 auto;
+  font-weight: 500;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.people_tab {
+  margin-top: 50rpx;
+  width: 340rpx;
+  background-color: #ff6700;
+  color: #fff;
+  padding: 16rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  margin: 50rpx auto 0 auto;
+  font-size: 32rpx;
+}
+.gongneng {
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  width: 650rpx;
+}
+
+.gongneng view {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  background-color: #fff;
+  border-radius: 30rpx;
+  padding: 12rpx;
+}
+.gongneng view .imagea {
+  width: 60rpx;
+  height: 60rpx;
+  padding-top: 18rpx;
+}
+.gongneng view .imageb {
+  width: 70rpx;
+  height: 70rpx;
+  padding-top: 12rpx;
+}
+
+.gongneng view .texta {
+  font-weight: bolder;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 18rpx;
+}
+.gongneng view .textb {
+  font-weight: bolder;
+  height: 70rpx;
+  line-height: 70rpx;
+  padding: 12rpx;
+}
+.muluhead {
+  font-weight: 900;
+  font-size: 60rpx;
+  margin-left: 30rpx;
+  margin-bottom: 20rpx;
+  width: 120rpx;
+}
+.ddmessqge {
+  margin-left: 10%;
+  border-radius: 0 0 20rpx 20rpx;
+}
+.mululist text {
+  font-size: 45rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mululist {
+  margin-bottom: 20rpx;
+  width: 550rpx;
+  height: 90rpx;
+  border-bottom: 1rpx solid #eee;
+}

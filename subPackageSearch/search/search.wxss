@@ -1,0 +1,202 @@
+.main {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, .0);
+  width: 85%;
+}
+
+.seachBox {
+  display: flex;
+  margin: 0 auto;
+  width: 100%;
+  border: 2rpx solid #fff;
+  background-color: #fff;
+  border-radius: 60rpx;
+  height: 60rpx;
+  padding: 2rpx;
+  box-sizing: border-box;
+}
+
+.seachBox image {
+  width: 40rpx;
+  height: 40rpx;
+  padding-left: 10rpx;
+  padding-top: 4rpx;
+}
+
+.searchbook {
+  width: 520rpx;
+  height: 10rpx;
+  padding-left: 16rpx;
+  padding-bottom: 2rpx;
+  font-size: 24rpx;
+}
+
+/* 搜索历史搜索发现样式 */
+.search-history {
+  margin-top: 40rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 30rpx;
+}
+
+.search-history-header {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+  margin-top: 20rpx;
+}
+
+.search-history-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-history-item {
+  /* width: 100rpx; */
+  font-size: 28rpx;
+  margin-bottom: 12rpx;
+  border-radius: 50rpx;
+  margin-right: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 12rpx 24rpx;
+  background-color: #f4f4f4;
+}
+
+.search-discovery {
+  margin-top: 20rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.search-discovery-header {
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-bottom: 20rpx;
+}
+
+.search-discovery-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-discovery-item {
+  width: 115rpx;
+  height: 40rpx;
+  font-size: 30rpx;
+  margin-bottom: 14rpx;
+  border-radius: 50rpx;
+  margin-right: 35rpx;
+  padding: 12rpx 18rpx;
+  background-color: #ffe7e7;
+  color: #ea595e;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* 搜索详情 */
+.Personalized_book {
+  display: flex;
+  margin-top: 25rpx;
+  background-color: #fff;
+  height: 220rpx;
+  border-radius: 12rpx;
+}
+.search_result {
+  font-weight: 900;
+  font-size: 40rpx;
+  margin-top: 20rpx;
+}
+.bookcover {
+  margin-top: 35rpx;
+  margin-left: 15rpx;
+  width: 125rpx;
+  height: 155rpx;
+  border-radius: 8rpx;
+}
+
+.bookmessage {
+  width: 85%;
+}
+
+.bookname {
+  font-weight: 600;
+  margin-top: 25rpx;
+  padding-left: 12rpx;
+}
+
+.bookauthor {
+  display: inline-block;
+  font-weight: 500;
+  margin-top: -8rpx;
+  padding-top: 16rpx;
+  padding-left: 12rpx;
+  white-space: normal;
+  font-size: 25rpx;
+  max-width: 190rpx;
+  color: rgb(156, 156, 156);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookspecial {
+  display: inline-block;
+  font-weight: 500;
+  margin-top: -5rpx;
+  padding-top: 16rpx;
+  padding-left: 12rpx;
+  white-space: normal;
+  font-size: 25rpx;
+  color: rgb(156, 156, 156);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookchapter {
+  display: inline-block;
+  font-weight: 500;
+  margin-top: -5rpx;
+  padding-top: 16rpx;
+  padding-left: 12rpx;
+  white-space: normal;
+  font-size: 25rpx;
+  color: rgb(156, 156, 156);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bookblub {
+  /* 多行文本显示省略号 */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  margin-top: -15rpx;
+  padding-left: 12rpx;
+  width: 460rpx;
+  height: 75rpx;
+  white-space: normal;
+  font-size: 25rpx;
+  color: rgb(156, 156, 156);
+}
+
+.result_head {
+  width: 100%;
+  border-top: 1rpx solid #eee;
+  margin-top: 25rpx;
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+  color: rgb(156, 156, 156);
+  text-align: center;
+}

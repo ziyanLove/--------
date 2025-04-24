@@ -1,0 +1,70 @@
+<!--pages/book/book.wxml-->
+<navigation defaultSetting="{{navigationSetting}}"></navigation>
+<!--pages/book/book.wxml-->
+<!-- 头部 -->
+<view class="top">
+  <view class="navtop">
+    <text class="time">今日已听<text style="color: #FF8902;">{{ listenlength }}</text>分钟</text>
+    <!-- 头部右边 -->
+    <view class="right">
+      <view>
+        <image src="/icon/书架搜索.png" bindtap="search" class="manage" />
+      </view>
+      <view style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <image src="/icon/manage3.png" class="manage" bindtap="toggleManage" style="width: 50rpx; height: 55rpx;" />
+      </view>
+      <!-- 管理图书和浏览记录的显示隐藏 -->
+      <view class="manage-wrapper" wx:if="{{manageHidden}}" bindtap="hideManage" bindtap="toggleManage" animation="{{animation}}">
+        <view class="manage-menu">
+          <view class="menu-item" bindtap="managebooks">
+            <image src="/icon/shujia.png" />
+            管理图书
+          </view>
+          <view class="menu-item" bindtap="BrowsingHistory">
+            <image src="/images/image/jilu.png" />
+            浏览记录
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 每日导读-->
+  <view class="everyday" bindtap="detailpage" data-id="{{day.id}}">
+    <view class="item" style="position: relative;">
+      <image src="{{day.bookcoverurl}}" class="image" />
+      <view style="position: absolute; top: 13.6%; left: 5.9%; font-size: 26rpx; color: #fff; background-color: rgba(0, 0, 0, 0.4); border-radius: 10rpx 0 0 0; padding: 5rpx;">
+        <text>导读</text>
+      </view>
+      <view class="txt">
+        <text class="title">{{day.bookname}}</text>
+        <text class="Introduction">{{day.bookblurb}}</text>
+      </view>
+      <image class="remen" src="/icon/热门 .png" />
+    </view>
+  </view>
+
+</view>
+<!-- 书架 -->
+<view class="containe" bindtap="dd">
+  <view class="shujia">
+    <view class="list" style="background-color: #fff;">
+      <scroll-view scroll-y="true" style=" height: 65vh; background-color: #fff;">
+        <view class="titlestyle"><text class="title">我的书架</text></view>
+        <!-- 占位 -->
+        <view style="height: 6vh; background-color: #fff;"></view>
+        <!-- 书架列 -->
+        <view style="margin-left: 1vh;">
+          <view wx:for="{{booksList}}" wx:key="index">
+            <my-bookslist book="{{ item }}" bindtap="detailpage" data-id="{{item.id}}"></my-bookslist>
+          </view>
+        </view>
+        <view class="item" style="padding-top: {{booksList.length==0 ? '50rpx' : ''}}; margin-top:16rpx" style="margin-left: 1vh;">
+          <view class="addbook" bindtap="findbook">
+            <text>+</text>
+            <text>去找书</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

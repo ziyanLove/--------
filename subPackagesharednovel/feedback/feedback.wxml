@@ -1,0 +1,13 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<view class="main">
+  <button class='button' bindtap="add_book" style="border-bottom: 1px solid #eee;">
+    我要添加书籍
+  </button>
+  <button class='button' open-type="feedback">
+    我有问题想要反馈
+  </button>
+</view>

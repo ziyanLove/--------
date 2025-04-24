@@ -1,0 +1,116 @@
+/* subPackagemymessage/browsinghistory/browsinghistory.wxss */
+
+.intro{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: auto;
+}
+.sub{
+  height: 100%;
+  width: calc(100vw + 6px);
+  overflow-x: hidden;
+}
+
+.containe{
+  position: absolute;
+  top: 10%;
+  padding-bottom: 0rpx;
+  padding-left: 10rpx;
+  background-color: #fff;
+}
+.clearAll{
+  background-color: transparent;
+  font-weight: 400;
+  color: #000;
+  padding-top: 5%;
+  height: 100%;
+  padding-left: 70%;
+  font-size: 36rpx;
+  letter-spacing: 0.1em;
+}
+.list {
+  background-color: #fff;
+}
+.list .item{
+  width: 94%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 30rpx;
+  padding-top: 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.list .item .left{
+  display: flex;
+  align-items: center;
+}
+.list .item .left .introduce{
+  display: flex;
+  flex-direction: column;
+  margin-left: 30rpx;
+  justify-content: center;
+  width: 300rpx;
+}
+.list .item .left .introduce .name{
+  font-weight: 600;
+  font-size: 36rpx;
+  width: 100%;
+  white-space: nowrap; /* 去除换行符,你踏马给我的数据里面有我怎么去除 */
+  overflow: hidden;   /* 将超出部分隐藏 */
+  text-overflow: ellipsis; /* 使用省略号来代替 */
+  margin-bottom: 25%;
+}
+.list .item .left .introduce .author ,
+.list .item .left .introduce .readtime{
+   color: #b4b4b4;
+   font-size: 22rpx;
+}
+
+.list .item .left image{
+  width: 130rpx;
+  height: 170rpx;
+  margin-left: 10rpx;
+  border-radius: 12rpx;
+}
+.list .item .right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  left: 10%;
+  transform: translate(-50%,-10%);
+}
+.list .item .right button{
+  font-size: 24rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  color: #b4b4b4;
+  background-color: #fff;
+  border: 1px solid #b4b4b4;
+  width: 140rpx;
+  border-radius: 46%;
+  margin-right: 30rpx;
+}
+.list .item .right image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.you{
+  background-color: blanchedalmond;
+}
+.empty{
+  /* display: flex;
+  justify-content: center; */
+ font-size: 50rpx;
+ color: #b4b4b4;
+ /* align-items: center; */
+ height: 100%;
+ width: 100%;
+}
+.empty text{
+  position: relative;
+  top: 25%;
+  left: 25%;
+}

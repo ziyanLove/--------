@@ -1,0 +1,64 @@
+<!--subPackagemymessage/bookshelfmanagement/bookshelfmanagement.wxml-->
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 28px; height: 28px; margin-left: 12px; margin-top: 5%;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<view class="top">
+  <text class="zongshu">{{booksList.length}}本</text>
+</view>
+<view class="containe">
+  <view class="list">
+    <!-- 每个item -->
+    <label class="item" wx:for="{{booksList}}" wx:key="index">
+      <image src="{{ item.bookcoverurl }}" class="itemimage" />
+      <view class="middle">
+        <text class="name">{{item.bookname}}</text>
+        <!-- 已经读至第几章 -->
+        <text class="smalltext">{{item.bookauthor}} • {{item.directoryrecord}}</text>
+        <view class="desc">
+          <!-- 当前本书的状态和最新章节 -->
+          <text class="time">状态 • </text>
+          <text class="desc1">{{item.lastreadtime}}</text>
+        </view>
+      </view>
+      <checkbox-group bindchange="onSelectedChange" data-id="{{item.id}}" value="1">
+        <!-- 右边的checkbox -->
+        <view class="right">
+          <checkbox checked="{{state}}" class="check-box" value="{{item.id}}"></checkbox>
+        </view>
+      </checkbox-group>
+    </label>
+  </view>
+  <!-- 底部 -->
+  <view class="bottom">
+    <view class="count" hidden="{{booksList.length==0}}">
+      <view class="xuanze">
+        <checkbox-group bindchange="checkAll">
+          <label>
+            <checkbox class="check-box" checked="{{booksList.length===total}}" />全部选中
+          </label>
+        </checkbox-group>
+      </view>
+      <view class="yixuan">
+        <text>已选<text class="countcolor"> {{selected.length}} </text>本</text>
+      </view>
+    </view>
+
+    <!-- 取消和删除按钮 -->
+    <view class="removebooks">
+      <button style="background-color: #fff;" bindtap="cancle">
+        <image src="/icon/取消1.png" /><text>取消</text>
+      </button>
+      <button style="background-color: #fff;" bindtap="zhiding">
+        <image src="/icon/置顶1.png" /><text>置顶</text>
+      </button>
+      <button style="background-color: #fff;" bindtap="delete">
+        <image src="/icon/删除1.png" /><text style="color: #de422e;">删除</text>
+      </button>
+    </view>
+    <!-- 临时遮罩层 -->
+    <view class="zhezhao" wx:if="{{zhezhaoflag}}">
+    </view>
+  </view>
+</view>

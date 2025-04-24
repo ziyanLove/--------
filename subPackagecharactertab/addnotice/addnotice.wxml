@@ -1,0 +1,29 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<!-- 蒙层 -->
+<view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}">
+</view>
+<view class="main">
+  <!-- 属性标签展示 -->
+  <view>
+    <view class="biaoqian" wx:for="{{chapterspecial}}" wx:key="index" style="display: flex; align-items: center;">
+      <text>{{item.chapterspecial}}</text><image src="/images/manageandhistory/trash2.png" style="height: 40rpx; width: 40rpx; position: absolute; right: 20rpx;" bindtap="shanchu" data-chapterspecialid="{{item.chapterspecialid}}"/>
+    </view>
+  </view>
+  <!-- 添加属性标签展示 -->
+  <view bindtap="powerDrawer" data-statu="open" class="btn">
+    <image src="/icon/加.png" style="width: 120rpx; height: 120rpx; margin: 0 auto; display: block; margin-top: 10%;" />
+  </view>
+</view>
+   <!--使用animation属性指定需要执行的动画-->
+   <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">
+    <!--drawer content-->
+    <view class="drawer_content">
+      <view style="font-size: 50rpx; font-weight: 700; text-align: center; margin-top: 20rpx; margin-bottom: 20rpx;">添加标签</view>
+      <input type="text" placeholder="请输入" model:value="{{value}}" confirm-type="done" class="iptd"/>
+      <button bindtap="addnotice" class="btnd">添加</button>
+    </view>
+  </view>

@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "navigation":"/commpnents/navbar/navbar",
+    "index_swiper": "/commpnents/index/index_swiper/index_swiper",
+    "index_tab": "/commpnents/index/index_tab/index_tab"
+  },
+  "navigationStyle": "custom",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "disableScroll": false
+  
+}

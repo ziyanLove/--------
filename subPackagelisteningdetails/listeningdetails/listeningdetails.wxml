@@ -1,0 +1,143 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<loading wx:if="{{loadingflag}}"></loading>
+<view class="containe" wx:if="{{!loadingflag}}">
+  <view class="top" style="display: flex; justify-content: center;">
+    <view class="topmiddle">
+      <text>播放</text>
+      <text class="bord"></text>
+    </view>
+    <view>
+    </view>
+  </view>
+  <view class="middleimage">
+    <view class="content-play-cover">
+      <image src="{{  bookcoverurl }}" class="image" style="animation-play-state:{{ state }}" />
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="directory">
+      <text>{{title}}</text>
+    </view>
+    <view class="name">
+      <view>{{bookname}}</view>
+      <image src="/images/playaudio/right.png" />
+      <view class="addbook" bindtap="{{!booksList?'addbook':''}}" data-id="{{ play.id }}" style="{{booksList?'background-color: gray':'' }}">{{booksList?'✓':'+'}} 书架</view>
+    </view>
+    <view class="author">
+      {{play.singer}}
+    </view>
+    <view>
+    </view>
+    <view class="options" >
+      <image src="/images/playaudio/ear.png" bindtap="task" />
+      <view class="original" bindtap="showText" style="margin-left: -12rpx">原著</view>
+      <button open-type="share" style="margin: 0; margin-top: 17rpx; padding: 0; width: 50rpx; background-color: #3e4a56;">
+        <image src="/images/playaudio/share.png" />
+      </button>
+    </view>
+    <!-- 播放区域 -->
+    <view class="music-player">
+      <view class="slider-wrapper" style="margin-left: 1.5%;" >
+        <!-- 往前跳15秒 -->
+        <image src="/images/playaudio/replay_left.png" bindtap="qian" />
+        <!-- 滑动区 -->
+        <text class="alredylisten">{{ audioCurrentTime }}</text>
+        <slider color="#80888e" selected-color="#fffffe" class="slider" block-size="12" value="{{myAudioPos}}" bindchanging="sliderChanging" bindchange="sliderChange"></slider>
+        <text class="total">{{ audioDuration }}</text>
+        <!-- 往后跳15秒 -->
+        <image src="/images/playaudio/replay_right.png" style="padding-left:10rpx;" bindtap="hou" />
+      </view>
+      <view class="controls">
+        <!-- 倍速播放 -->
+        <view class="speed" bindtap="Doublespeed">
+          <view class="times">
+            {{playspeed}}X
+          </view>
+          <image src="/images/playaudio/speed.png" />
+        </view>
+        <!-- 播放上一个 -->
+        <view class="playleft">
+          <image src="/images/playaudio/play1.png" bindtap="prev" />
+        </view>
+        <!-- 暂停播放 -->
+        <view class="suspend" hidden="{{ state == 'running' }}" bindtap="play">
+          <image style="margin-left: 5rpx" src="/images/playaudio/play.png" />
+        </view>
+        <view class="suspend" bindtap="pause" hidden="{{ state == 'paused' }}">
+          <image src="/images/playaudio/stop0.png" />
+        </view>
+        <!-- 播放下一个 -->
+        <view class="playright">
+          <image src="/images/playaudio/play1.png" bindtap="next" />
+        </view>
+        <view class="option" bindtap="onShowSongList">
+          <image src="/images/playaudio/option.png" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 音频列表 -->
+  <view class="myyList" id="myy" bindtap="onHideSongList" hidden="{{!housing}}">
+    <view class="bookList" animation="{{animation}}" hidden="{{!showList}}">
+      <view class="listtop">
+        <text>播放列表</text>
+        <view>
+          <image src="/images/playaudio/back.png" bindtap="onHideSongList" id="myy" />
+        </view>
+      </view>
+      <view class="order" bindtap="order">
+        <image src="{{ order?'/images/playaudio/positivesequence.png':'/images/playaudio/Reverseorder.png'  }} " mode="" />
+        <text>{{ order?'顺序播放':'倒序播放'}}</text>
+      </view>
+      <scroll-view scroll-y="true" bindscrolltoupper="{{ order?'loadMoreUp':'loadMoreDown' }}" bindscrolltolower="{{order?'loadMoreDown':'loadMoreUp'}}">
+        <view class="item" wx:for="{{playlist}}" wx:key="{{index}}" bindtap="selectplay" data-index="{{index}}" data-id="{{ item.id }}">
+          <view class="listen">
+            <image src="{{play.id===item.id?'/images/playaudio/listenn.png':'/images/playaudio/listen.png'}}" style="height: 66rpx; width: 60rpx;" />
+          </view>
+          <view class="{{play.id===item.id?'active':''}} bookname" style="margin-top: -20rpx;">
+            {{item.title}}
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!-- 倍速播放的列表 -->
+  <view class="mytimes" wx:if="{{speedList}}">
+    <view class="mytimess" wx:for="{{ doublespeed }}" wx:key="{{index}}">
+      <view class="myspeed  {{ index==5?'lastmyspeed':'' }}" bindtap="SpeedPlay" data-speed="{{item}}" data-index="{{index}}">{{ item }}X
+      </view>
+      <view class="lll" hidden="{{ showplayspeedIndex!==index }}" style="{{ index==5?'margin-top: -10rpx':''}}">
+      </view>
+    </view>
+    <view class="closespeed" bindtap="closespeedList">
+      关闭
+    </view>
+  </view>
+
+  <!-- 原著里的文字 -->
+  <scroll-view class="Text" wx:if="{{ AIText }}" scroll-y="true">
+    <view class="Texttop">
+      {{bookText.title}}
+    </view>
+    <view class="content">
+      <rich-text nodes="{{bookText.content}}" />
+    </view>
+  </scroll-view>
+
+  <view class="Voicesettings" wx:if="{{ voicesettings }}">
+    <view class="voicetop">默认声音设置</view>
+    <view class="role">
+      <view class="list">
+        <view class="item " wx:for="{{ roles }}" wx:key="index" bindtap="selectvoicerole" data-index="{{ index }}">
+          <image src="{{ item.nameurl }}" class="roleIMG {{ selected==index?'.activeimg':'' }} " />
+          <text class="voicename {{ selected==index?'.textactive':'' }}">{{ item.namemap }}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

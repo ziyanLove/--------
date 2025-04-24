@@ -1,0 +1,43 @@
+<navigation defaultSetting="{{navigationSetting}}"></navigation>
+<!-- 提示登录 -->
+<view class="login_main" bindtap="getUser" wx:if="{{flag}}">
+  <view style="width: 150rpx;">
+    <image src="/icon/宠物.png" style="width: 140rpx; height: 140rpx; position: absolute; bottom: 8%; " />
+  </view>
+  <view class="login_text"><text>立即登录解锁更多功能</text></view>
+  <view class="login_button" size="mini">立即登录</view>
+</view>
+<scroll-view scroll-y="true" bindscrolltolower="loadMore" style="height: {{scrollHeight}}px;" enable-back-to-top>
+<view class="main">
+  <!-- 搜索栏 -->
+  <!-- 轮播图 -->
+  <index_swiper></index_swiper>
+  <!-- tab栏 -->
+  <index_tab></index_tab>
+  <!-- 个性化推荐 -->
+    <view class="personalized_recommendation">
+      <view class="personalized_name">
+        <text class="text_1">个性化推荐</text>
+        <image src="/icon/花 (6).png" class="image_1" />
+      </view>
+      <view>
+        <block wx:for="{{listData}}" wx:key="index" wx:for-item="item" wx:for-index="idx" wx:for-start="0" wx:for-end="{{endIndex}}">
+          <view class="scroll-view-item">
+            <navigator class="Personalized_book" url="/subPackagedetails/bookdetails/bookdetails?book_id={{item.id}}">
+              <image class="image_2" src="{{ item.bookcoverurl }}" />
+              <view class="bookname">
+                <view class="bookname">{{item.bookname}}</view>
+                <!-- 作者名和章节数 -->
+                <view class="bookuser"><text class="bookauthor">{{ item.bookauthor }}</text><text class="bookauthor"> •</text>
+                  <text class="bookspecial">{{ item.bookspecial1 }}</text><text class="bookauthor"> •</text>
+                  <text class="bookchapter">{{ item.directorynumb }}</text>
+                </view>
+                <view class="bookblub">{{item.bookblurb}}</view>
+              </view>
+            </navigator>
+          </view>
+        </block>
+      </view>
+    </view>
+</view>
+</scroll-view>

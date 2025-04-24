@@ -1,0 +1,202 @@
+.sea {
+  width: 100%;
+  height: 560rpx;
+  position: relative;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.sea .wave {
+  position: absolute;
+	top: 560rpx;
+	left: -800rpx;
+	width: 2200rpx;
+	height: 2200rpx;
+	background: #fff;
+	border-radius: 43%;
+	filter: opacity(0.4);
+	animation: drift linear infinite;
+	transform-origin: 50% 48%;
+}
+
+.sea .wave:nth-of-type(1) {
+  animation-duration: 6s;
+}
+
+.sea .wave:nth-of-type(2) {
+  animation-duration: 7s;
+}
+
+.sea .wave:nth-of-type(3) {
+  animation-duration: 8s;
+  background-color: rgb(241, 241, 241);
+  filter: opacity(0.05);
+}
+
+@keyframes drift {
+  from {
+    transform: rotate(360deg);
+  }
+}
+
+.main {
+  width: 90%;
+  position: absolute;
+  left: 50%;
+  top: 85%;
+  transform: translate(-50%, -85%);
+}
+
+.user {
+  position: absolute;
+  top: 8%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 400rpx;
+  margin-top: 3%;
+  justify-content: center;
+  align-items: center;
+}
+
+#buttond {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  padding: 0;
+  border: 1rpx solid rgb(226, 226, 226);
+}
+
+.user_iamge {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50rpx;
+}
+
+.user .user_name {
+  margin-top: 5%;
+  width: 220rpx;
+  font-size: 44rpx;
+  font-weight: 800;
+}
+
+.user_jinru {
+  width: 100rpx;
+  height: 100rpx;
+  margin-top: 4%;
+}
+
+.feature {
+  font-size: 38rpx;
+  width: 100%;
+  height: 650rpx;
+  border-radius: 30rpx;
+  background-color: rgb(255, 255, 255, 0.5);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.share {
+  margin-top: 6%;
+  width: 100%;
+  height: 130rpx;
+}
+
+.userkonw {
+  margin-top: 20rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.sharebook {
+  margin-top: 20rpx;
+  display: flex;
+  height: 100rpx;
+}
+
+.usernotice {
+  margin-top: 20rpx;
+  display: flex;
+  height: 100rpx;
+}
+
+.userfeedback {
+  margin-top: 20rpx;
+  display: flex;
+  height: 100rpx;
+}
+
+.feature image {
+  width: 70rpx;
+  height: 70rpx;
+  margin-left: 10%;
+}
+
+.feature text {
+  margin-left: 5%;
+  width: 300rpx;
+}
+
+.login_out {
+  margin-top: 5%;
+  background-color: rgb(255, 255, 255, 0.7);
+  height: 100rpx;
+  width: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 40rpx;
+  color: red;
+  font-weight: 600;
+}
+
+.fankui {
+  margin: 0;
+  padding: 0;
+  background-color: inherit;
+  position: static;
+}
+
+.fankui:after {
+  content: none;
+}
+
+/* 去掉边框 */
+.fankui::after {
+  border: none;
+}
+
+.my-cells {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 3%;
+}
+
+.yangshifx {
+  margin-left: 5%;
+  font-size: 34rpx;
+  margin-bottom: 1%;
+}
+
+.my-cell {
+  padding: 15rpx 30rpx;
+  border: none;
+}
+/* 去掉背景色和内外边距 */
+button {
+    margin: 0;
+    padding: 0;
+    background-color: inherit;
+    position: static;
+}
+button:after {
+    content: none;
+}
+/* 去掉边框 */
+button::after {
+    border: none;
+}
+button-hover{
+  background: #fff; 
+}

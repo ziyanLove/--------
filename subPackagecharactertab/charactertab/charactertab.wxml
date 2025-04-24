@@ -1,0 +1,47 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<view class="main" wx:if="{{ !loadingflag }}">
+  <!-- 已添加人物形象 -->
+  <scroll-view class="scroll-view_H" scroll-x scroll-with-animation style="width: 100%;height: 1000rpx" bindscroll="getSelectItem">
+    <block wx:for="{{chapterinfo}}" wx:key="unique" wx:for-index="id" wx:for-item="item">
+      <view class="scroll_item {{item.selected ? 'selected' : ''}}" data-index='{{item.index}}'>
+        <navigator url="/subPackagecharactertab/charactes/characters?chapterid={{item.chapterid }}&bookid={{bookid}}" hover-class="none">
+          <view class="chaptertab">
+            <!-- 图片 -->
+            <view class="img">
+              <image src="{{ item.chaptersrc }}" style="width: 100%; height: 500rpx;" />
+            </view>
+            <!-- 详情 -->
+            <view class="xiangqing">
+              <!-- 名字和信息 -->
+              <view class="jieshao">
+                <view class="name">{{item.chaptername}}</view>
+                <view class="shenfen">{{item.identity}}</view>
+                <view class="namemap">{{item.namemap}}</view>
+              </view>
+              <!-- 打的补丁 -->
+              <view class="buding">
+                <scroll-view scroll-x="true" style="display: flex; white-space: nowrap; height: 100rpx; text-align: left;">
+                  <text wx:for="{{item.chapterspecial}}" wx:key="index" wx:for-item="cell" style="display: inline-block; height: 100rpx;">{{cell.chapterspecial}} / </text>
+                </scroll-view>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </block>
+    <!-- 进入添加人物页面 -->
+    <view class="scroll_item {{selected ? 'selected' : ''}}">
+      <navigator url="/subPackagecharactertab/useraddcharacter/useraddcharacter?bookid={{bookid}}" hover-class="none">
+      <view style="height: 720rpx;">
+        <image src="/icon/加.png" style="margin-top: 50%; width: 150rpx; height: 150rpx;" />
+        <view style="color: #FF7F50; font-size: 40rpx; font-weight: 600;">添加新人物</view>
+      </view>
+    </navigator>
+    </view>
+  </scroll-view>
+</view>
+<image src="/icon/人物背景.jpg" mode="" style="width: 100%; height: 90%;" class="background"/>

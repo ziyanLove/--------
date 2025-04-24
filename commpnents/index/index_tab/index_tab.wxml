@@ -1,0 +1,23 @@
+<view class="tabbox">
+  <view class="hd">
+    <block wx:for="{{navList}}" wx:key="navList">
+      <view class="hd_flex {{nav_type == index ? 'hd_flex_on' : ''}}" catchtap="changeType" data-index="{{index}}">
+        {{item}}
+      <view class="{{nav_type == index ? 'wd' : ''}}"></view>
+      </view>
+    </block>
+  </view>
+  <view>
+    <view>
+      <block wx:for="{{tabNav}}" wx:key="tabNav" data-index="{{index}}">
+        <view class="tab2" wx:if="{{nav_type == index}}">
+          <!-- 跳转至书籍详情页 -->
+          <navigator class="book_suggest" wx:for="{{booksuggest}}" wx:key="booksuggest" url="/subPackagedetails/bookdetails/bookdetails?book_id={{item.id}}">
+            <image src="{{ item.bookcoverurl }}" mode="aspectFill" class="image_0" />
+            <view class="bookname">{{item.bookname}}</view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

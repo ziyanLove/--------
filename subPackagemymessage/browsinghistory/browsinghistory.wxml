@@ -1,0 +1,34 @@
+<!--subPackagemymessage/browsinghistory/browsinghistory.wxml-->
+<view class="intro">
+  <view class="sub">
+    <navigation defaultSetting="{{navigationSetting}}">
+      <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+      <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+      </view>
+    </navigation>
+    <view class="containe" style="width: 95%;">
+      <view style="display: flex; position: fixed; background-color: #fff; width: 100%; height: 110rpx; z-index: 9999; top: 10%;">
+        <button class="clearAll" bindtap="clearAll" wx:if="{{booksList.length!==0}}" style="width: 100%;">一键清空</button>
+      </view>
+    </view>
+    <view class="list" style="width: 92%; margin: 7% auto 0 auto;">
+      <view class="item" wx:for="{{booksList}}" wx:key="index">
+        <view class="left">
+          <image src="{{ item.bookcoverurl }}" />
+          <view class="introduce">
+            <view class="name">{{item.bookname}}</view>
+            <!-- 返回的应该是距离现在的时间 -->
+            <view class="author">{{item.readtime}}前读过</view>
+          </view>
+        </view>
+        <view class="right">
+          <button size="mini" bindtap="{{!item.shelfStatu?'add':'' }}" data-id="{{item.id}}" style="display: flex; justify-content: center; align-items: cneter;  border-radius: 50rpx; {{item.shelfStatu===1?'background-color: #f5f4f4;pointer-events: none':'color: red;border-color: red;'}}"><text style="{{item.shelfStatu===1?'font-size: 32rpx;':'font-size: 44rpx;'}}">{{item.shelfStatu===1?'✓':'+'}}</text><text style="font-size: 32rpx; margin-left: 8rpx;"> 书架</text></button>
+          <image bindtap="delete" data-id="{{item.id}}" src="/icon/trash2.png" style="width: 34rpx; height: 34rpx; margin-right: 10rpx; border: 1rpx solid #b4b4b4; padding: 15rpx; border-radius: 25rpx;" />
+        </view>
+      </view>
+    </view>
+    <view class="empty" wx:if="{{booksList.length===0}}">
+      <text>暂无浏览记录。。。</text>
+    </view>
+  </view>
+</view>

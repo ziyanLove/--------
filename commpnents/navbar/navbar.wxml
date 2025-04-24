@@ -1,0 +1,13 @@
+<view class="navigationPage {{defaultSetting.size}}" style="height: {{height}}px;background-color:{{defaultSetting.backgroundColor}}">
+  <view style="height:{{statusBarHeight}}px;width: 100%; margin-top: -2px; background-color: #eee;"></view>
+  <view style="height: {{navBarHeight}}px;width: 100%;" class="head">
+    <slot name="return"></slot>
+      <!-- 标题 -->
+    <view class="navigationTitle">
+      {{defaultSetting.title}}
+    </view>
+    <slot name="placeholder"></slot>
+  </view>
+</view>
+// 空白view元素占用高度
+<view style='height: {{height-10}}px'></view>

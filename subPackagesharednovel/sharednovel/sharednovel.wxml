@@ -1,0 +1,31 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<view class="main">
+  <!-- 未登录 -->
+  <view wx:if="{{!flag}}" class="no_login" style="width: 390rpx; margin: 0 auto;">
+  您还未登录,请先登录！
+  </view>
+  <!-- 已经登录 -->
+  <view wx:if="{{flag}}" class="yes_login">
+    <view style="font-weight: 600; font-size: 30rpx; margin-bottom: -20rpx; width: 500rpx; margin: 0 auto;">世界因分享而美丽，生命因分享而充实</view>
+    <view class="scroll-view-item">
+      <block wx:for="{{listData}}" wx:key="index">
+        <navigator class="Personalized_book" url="/subPackagedetails/bookdetails/bookdetails?book_id={{item.id}}">
+          <image class="image_2" src="{{ item.bookcoverurl }}" />
+          <view class="bookname">
+            <view class="book_name">{{item.bookname}}</view>
+            <!-- 作者名和章节数 -->
+            <view class="bookuser"><text class="bookauthor">{{ item.bookauthor }}</text><text class="bookauthor"> •</text>
+              <text class="bookspecial">{{ item.bookspecial1 }}</text><text class="bookauthor"> •</text>
+              <text class="bookchapter">{{ item.directorynumb }}</text>
+            </view>
+            <view class="bookblub">{{item.bookblurb}}</view>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+</view>

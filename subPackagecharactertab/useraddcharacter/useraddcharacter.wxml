@@ -1,0 +1,37 @@
+<navigation defaultSetting="{{navigationSetting}}">
+  <image slot="return" src="/icon/返回.png" style="width: 20px; height: 20px; margin-left: 12px;" bindtap="reindex" />
+  <view slot="placeholder" style="width: 20px;height: 20px; margin-right: 12px;">
+  </view>
+</navigation>
+<view class="main">
+  <form bindsubmit="tijiao">
+    <!-- 挑选人物 -->
+    <view class="name">请选择您要配置的人物</view>
+    <scroll-view class="scroll-view_H" scroll-x scroll-with-animation style="width: 100%;height: 400rpx" bindscroll="getSelectItem">
+      <block wx:for="{{proList}}" wx:key="unique" wx:for-index="id" wx:for-item="item">
+        <view class="scroll_item {{item.selected ? 'selected' : ''}}" data-index='{{item.index}}' bindtap='selectProItem'>
+          <view class='proImg'>
+            <image src="{{item.src}}" class="slide-image" mode="widthFix" />
+          </view>
+          <view class='detailBox'>
+            <view class='proTitle'>{{item.chaptername}}</view>
+            <view class='proDec'>{{item.identity}}</view>
+            <view class='proPrice'>{{item.gender}}</view>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+    <!-- 选择声音 -->
+    <view class="yinse">音色选择</view>
+    <view style="display: flex; flex-wrap: wrap; margin-top: 20rpx;height: 420rpx;justify-content: cneter; align-items: center;">
+      <view wx:for="{{namemap}}" wx:key="index" style="width: 33%; height: 49%;" bindtap="xuanshengyin" data-mapid="{{item.mapid}}">
+        <view style="display: flex; flex-direction: column; align-items: cneter; margin-top: 24rpx; border: 2px solid rgb(255, 255, 255); padding: 4rpx;" class="hd_flex {{nav_type == item.mapid ? 'hd_flex_on' : ''}}">
+          <image src="{{item.nameurl}}" style="width: 120rpx;height: 120rpx; margin: 0 auto;" />
+          <view style="margin-top: 15rpx;">{{item.namemap}}</view>
+        </view>
+      </view>
+    </view>
+    <button bindtap="tijiao" class="tijiao">确认</button>
+  </form>
+  <view style="height: 100rpx;"></view>
+</view>

@@ -1,0 +1,72 @@
+<navigation defaultSetting="{{navigationSetting}}"></navigation>
+<loading wx:if="{{loadingflag}}"></loading>
+<view wx:if="{{!loadingflag}}">
+  <view class="sea">
+    <text class="wave"></text>
+    <text class="wave"></text>
+    <text class="wave"></text>
+  </view>
+  <!-- 未登录 -->
+  <view class="user" wx:if="{{login_flag}}" bindtap="getUser">
+    <!-- 默认头像，后台给的 -->
+    <view style="margin-top: 20%;">
+      <button id="buttond">
+        <image src="/icon/默认头像.jpg" class="user_iamge" />
+      </button>
+    </view>
+    <!-- 提示登录 -->
+    <view style="margin-top: 20rpx; color: #fff; font-size: 40rpx; letter-spacing: 0.1em;">
+      <text>立即登录</text>
+    </view>
+  </view>
+  <!-- 已经登录 -->
+  <view class="user" wx:if="{{!login_flag}}">
+    <!-- 用户头像，后台给的 -->
+    <view style="margin-top: 20%;">
+      <button open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar" id="buttond">
+        <image src="{{avatarUrl}}" class="user_iamge" />
+      </button>
+    </view>
+    <!-- 用户名，后台给/自己设置 -->
+    <view style="margin-top: 20rpx;">
+      <input class="user_name" style="color: #fff;  font-size: 40rpx; letter-spacing: 0.1em; text-align: center;" type="nickname" bindblur="getnickname" value="{{userInfo.nickName}}"></input>
+    </view>
+  </view>
+  <image src="http://82.156.157.176:666/qianduan/背景.jpg" style="width: 100%; height: 580rpx; position: absolute; top: 10%;z-index: -10;" />
+</view>
+<view wx:if="{{!loadingflag}}" style="background-color: #fff; height: 580rpx; border-radius: 35rpx; width: 90%; margin: 0 auto; margin-top: 8%;">
+  <mp-cells ext-class="my-cells">
+    <button open-type="share"  style="width: 100%;">
+      <mp-cell link ext-class="my-cell" style="border-radius: 20rpx;" bindtap="shareapp">
+        <view slot="icon">
+          <image src="http://82.156.157.176:666/qianduan/我的分享.png" style="width: 60rpx; height: 60rpx; padding-top: 10%;" />
+        </view>
+        <view class="yangshifx" style="text-align: left;">分享小程序</view>
+      </mp-cell>
+    </button>
+    <mp-cell link ext-class="my-cell"  bind:tap="mysharebook">
+      <view slot="icon">
+        <image src="http://82.156.157.176:666/qianduan/我分享的书.png" style="width: 60rpx; height: 60rpx; margin-top: 10%;" />
+      </view>
+      <view class="yangshifx">我分享的书</view>
+    </mp-cell>
+    <mp-cell link ext-class="my-cell" bind:tap="userknow">
+      <view slot="icon">
+        <image src="http://82.156.157.176:666/qianduan/用户须知.png" style="width: 60rpx; height: 60rpx; margin-top: 10%;" />
+      </view>
+      <view class="yangshifx">用户须知</view>
+    </mp-cell>
+    <mp-cell link ext-class="my-cell" bind:tap="noticefankui">
+      <view slot="icon">
+        <image src="http://82.156.157.176:666/qianduan/问题反馈.png" style="width: 60rpx; height: 60rpx; margin-top: 10%;" />
+      </view>
+      <view class="yangshifx">问题反馈</view>
+    </mp-cell>
+    <mp-cell link ext-class="my-cell" bind:tap="loginout">
+      <view slot="icon">
+        <image src="http://82.156.157.176:666/qianduan/注销.png" style="width: 60rpx; height: 60rpx; margin-top: 10%;" />
+      </view>
+      <view class="yangshifx">退出登录</view>
+    </mp-cell>
+  </mp-cells>
+</view>
